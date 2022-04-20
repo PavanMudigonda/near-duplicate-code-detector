@@ -108,7 +108,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Check for duplicate code
-        uses: platisd/duplicate-code-detection-tool@master
+        uses: PavanMudigonda/near-duplicate-code-detection-tool@v0.0.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directories: "."
@@ -135,7 +135,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Check for duplicate code
-        uses: platisd/duplicate-code-detection-tool@master
+        uses: PavanMudigonda/near-duplicate-code-detection-tool@v0.0.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directories: "src"
