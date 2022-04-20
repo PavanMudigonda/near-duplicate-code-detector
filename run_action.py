@@ -141,15 +141,25 @@ def main():
     github_api_url = os.environ.get('GITHUB_API_URL')
     request_url = '%s/repos/%s/issues/%s/comments' % (
         github_api_url, repo, args.pull_request_id)
-
+    request_checkrun_url = '%s/repos/%s/check-runs' % (
+        github_api_url, repo)
+    
     post_result = requests.post(request_url, json={'body': message}, headers={
                                 'Authorization': 'token %s' % github_token})
 
+    post_checkrun_result = requests.post(request_url, json={'body': message}, headers={
+                                'Authorization': 'token %s' % github_token})
+        
     if post_result.status_code != 201:
         print("Posting results to GitHub failed with code: " +
               str(post_result.status_code))
         print(post_result.text)
-
+        
+    if post_checkrun_result.status_code != 201:
+        print("Posting results to GitHub failed with code: " +
+              str(post_checkrun_result.status_code))
+        print(post_checkrun_result.text)
+        
     return detection_result.value
 
 
