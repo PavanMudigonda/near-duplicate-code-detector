@@ -1,4 +1,5 @@
-name: 'Duplicate code detection tool'
+# Pavan
+name: 'near-duplicate-code-detection-tool'
 description: 'Detect similarities between source code files'
 inputs:
   github_token:
